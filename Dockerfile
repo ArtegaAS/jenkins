@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 jenkins/jenkins:latest
 
-LABEL maintainer="pluhin@gmail.com"
+LABEL maintainer="ArtegaAS@gmail.com"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV JENKINS_UC_DOWNLOAD="https://mirror.yandex.ru/mirrors/jenkins"
@@ -33,7 +33,6 @@ RUN apt-get update && apt-get install -yqq apt-transport-https \
 		curl \
 		gnupg2 \
                 wget \
-		software-properties-common \
 	&& echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
 	&& echo "    UserKnownHostsFile=/dev/null" >> /etc/ssh/ssh_config \
     && apt-get purge --auto-remove -yqq \
